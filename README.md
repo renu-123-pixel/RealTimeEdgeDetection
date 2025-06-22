@@ -101,14 +101,18 @@ extern "C"
 JNIEXPORT jbyteArray JNICALL
 Java_com_examplefourthjuly_realtimeedgedetection_NativeProcessor_processFrame(
     JNIEnv* env, jobject, jintArray pixels_, jint width, jint height) {
+    
     jint* pixels = env->GetIntArrayElements(pixels_, nullptr);
     Mat rgba(height, width, CV_8UC4, pixels);
     Mat bgr;
+    
     cvtColor(rgba, bgr, COLOR_RGBA2BGR);
     env->ReleaseIntArrayElements(pixels_, pixels, 0);
     Mat gray;
+    
     cvtColor(bgr, gray, COLOR_BGR2GRAY);
     Mat edges;
+    
     Canny(gray, edges, 100, 200);
     jbyteArray result = env->NewByteArray(edges.total());
     env->SetByteArrayRegion(result, 0, edges.total(), reinterpret_cast<jbyte*>(edges.data));
