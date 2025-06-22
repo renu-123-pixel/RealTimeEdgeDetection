@@ -42,15 +42,14 @@ app/
         │   └── layout/
         │       └── activity_main.xml
         └── AndroidManifest.xml
-
----
 ---
 
 ## 🔧 Configuration
 
 ### `build.gradle` (app)
 
-```groovy
+```
+groovy
 android {
     ...
     defaultConfig {
@@ -75,7 +74,8 @@ android {
 
 ### `CMakeLists.txt`
 
-```cmake
+```
+cmake
 cmake_minimum_required(VERSION 3.4.1)
 
 add_library(native-lib SHARED native-lib.cpp)
@@ -95,24 +95,21 @@ target_link_libraries(
 
 ## 🧠 Native C++ Code (Canny Detection)
 
-```cpp
+```
+cpp
 extern "C"
 JNIEXPORT jbyteArray JNICALL
 Java_com_examplefourthjuly_realtimeedgedetection_NativeProcessor_processFrame(
     JNIEnv* env, jobject, jintArray pixels_, jint width, jint height) {
-
     jint* pixels = env->GetIntArrayElements(pixels_, nullptr);
     Mat rgba(height, width, CV_8UC4, pixels);
     Mat bgr;
     cvtColor(rgba, bgr, COLOR_RGBA2BGR);
     env->ReleaseIntArrayElements(pixels_, pixels, 0);
-
     Mat gray;
     cvtColor(bgr, gray, COLOR_BGR2GRAY);
-
     Mat edges;
     Canny(gray, edges, 100, 200);
-
     jbyteArray result = env->NewByteArray(edges.total());
     env->SetByteArrayRegion(result, 0, edges.total(), reinterpret_cast<jbyte*>(edges.data));
     return result;
