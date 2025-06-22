@@ -27,22 +27,22 @@ An Android app that captures live camera frames, sends them to C++ native code u
 ---
 
 ## 📂 Project Structure
-
 ```
-RealTimeEdgeDetection/
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/examplefourthjuly/realtimeedgedetection/
-│   │   │   │   ├── MainActivity.java
-│   │   │   │   └── NativeProcessor.java
-│   │   │   ├── cpp/
-│   │   │   │   └── native-lib.cpp
-│   │   │   ├── res/layout/
-│   │   │   │   └── activity_main.xml
-│   │   │   └── AndroidManifest.xml
-├── CMakeLists.txt
-└── README.md
+```
+app
+|
+Main/
+├── java/
+│   └── com.example.realtimeedgedetection/
+│       ├── MainActivity.java
+│       └── NativeProcessor.java
+├── cpp/
+│   ├── CMakeLists.txt
+│   └── native-lib.cpp
+├── res/layout/
+│   └── activity_main.xml
+└── AndroidManifest.xml
+
 ```
 
 ---
