@@ -28,7 +28,6 @@ An Android app that captures live camera frames, sends them to C++ native code u
 
 ## 📂 Project Structure
 ```
-```
 app/
 └── src/
     └── main/
@@ -43,8 +42,6 @@ app/
         │   └── layout/
         │       └── activity_main.xml
         └── AndroidManifest.xml
-
-```
 
 ---
 
