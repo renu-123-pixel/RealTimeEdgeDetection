@@ -150,6 +150,43 @@ Java_com_examplefourthjuly_realtimeedgedetection_NativeProcessor_processFrame(
 5. Resulting byte array is converted back to a Bitmap.
 6. The `ImageView` displays the edge-detected result.
 
+## ⚙️ Setup Instructions
+
+### Prerequisites
+
+- Android Studio Hedgehog or newer
+- Android NDK (version 25.1+ recommended)
+- OpenCV SDK (native C++)
+
+### Steps
+
+1. Clone the repo:
+    ```bash
+    git clone https://github.com/yourusername/RealTimeEdgeDetectionApp.git
+    ```
+
+2. Place the OpenCV SDK:
+    - Download OpenCV Android SDK from [opencv.org](https://opencv.org/releases/).
+    - Unzip and place the folder in your project directory.
+    - Update `CMakeLists.txt` with the correct path:
+      ```cmake
+      set(OpenCV_DIR <path_to_your_sdk>/OpenCV-android-sdk/sdk/native/jni)
+      find_package(OpenCV REQUIRED)
+      include_directories(${OpenCV_INCLUDE_DIRS})
+      ```
+
+3. Make sure `CMakeLists.txt` exists in `app/src/main/cpp` and is properly linked via `externalNativeBuild` in `build.gradle`.
+
+4. Configure `ndkVersion` in your `build.gradle`:
+    ```groovy
+    ndkVersion "25.1.8937393"
+    ```
+
+5. Clean and build the project.
+
+---
+   
+
 ---
 
 ## 🐞 Common Issues
