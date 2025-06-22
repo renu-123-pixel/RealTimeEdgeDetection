@@ -44,6 +44,7 @@ app/
         └── AndroidManifest.xml
 
 ---
+---
 
 ## 🔧 Configuration
 
