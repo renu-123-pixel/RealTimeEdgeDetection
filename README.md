@@ -25,7 +25,11 @@ An Android app that captures live camera frames, sends them to C++ native code u
 - A physical Android device or emulator
 
 ---
+# 📸 UML Sequence Diagram 
+| <img="Edge_detection_app_UML Sequence Diagram.png" width="800">|
 
+# 📸 Component Diagram 
+| <img="Edge_Detection_app_Component Diagram.png" width="800">|
 ## 📂 Project Structure
 ```
 app/
