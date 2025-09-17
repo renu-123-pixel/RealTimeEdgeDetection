@@ -26,7 +26,7 @@ An Android app that captures live camera frames, sends them to C++ native code u
 
 ---
 # 📸 UML Sequence Diagram 
-| <img src="Edge_detection_app_UML Sequence Diagram.png" width="800"/> |
+| <img src="Edge_detection_app_UML Sequence Diagram.png" width="900"/> |
 
 # 📸 Component Diagram 
 | <img src="Edge_Detection_app_Component Diagram.png" width="800"/>|
